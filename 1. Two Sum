@@ -24,19 +24,46 @@ Constraints:
 Only one valid answer exists.
 
 
+First Run:
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        int[] arr = new int [2];
+        for(int i=0; i<nums.length; i++){
+            for(int j=0; j<nums.length; j++){
+                if(i != j && nums[i] + nums[j] == target){
+                    arr[0]=i;
+                    arr[1]=j;
+                    
+                }
+                
+            }
+        }
+        return arr;
+
+    }
+}
+
+Point of Concern: This runs in O(n^2) time complexity, and is probably not the most efficent solution. Maybe I can optimize this to O(n).
 
 
-Solution:
+Updated Solution:
 
-def two_sum(nums, target):
-    num_map = {}  # Step 1: Create an empty dictionary to store seen numbers and their indices
-
-    for i, num in enumerate(nums):  # Step 2: Loop through the list, keeping track of index (i) and value (num)
-        complement = target - num  # Step 3: Calculate the complement (number needed to reach target)
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        HashMap <Integer, Integer> map = new HashMap<>();
         
-        if complement in num_map:  # Step 4: Check if the complement is already in the dictionary
-            return [num_map[complement], i]  # Step 5: If found, return the indices of the complement and current number
-
-        num_map[num] = i  # Step 6: If not found, store the current number with its index in the dictionary
-
-    return []  # Step 7: If no solution is found, return an empty list
+        //Looping through the array
+        for(int i=0; i< nums.length; i++){
+            //checking if the map contains the complement
+            int complement = target - nums[i];
+            if(map.containsKey(complement)){
+                //If found, return the indices of the complement (from the map) and the current number (i)
+                return new int[] { map.get(complement), i };
+            }
+            //Otherwise, add the number and its indice into the map as key and value, respectively
+            map.put(nums[i], i);
+        }
+        return new int[] {}; // if no solution is found
+    }
+}
