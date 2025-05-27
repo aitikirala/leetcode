@@ -1,0 +1,23 @@
+class Solution {
+    public boolean isPalindrome(int x) {
+
+        // ❌ Rule out negatives (e.g., -121) and numbers ending in 0 (e.g., 10), except 0 itself
+        // Because: -121 ≠ 121 and 10 → "01" ≠ "10"
+        if (x < 0 || (x % 10 == 0 && x != 0)) return false;
+
+        // ✅ This will store the reversed second half of the number
+        int reversedHalf = 0;
+
+        // 🔁 Continue until we've processed half the digits
+        while (x > reversedHalf) {
+            int digit = x % 10; // Get the last digit of x
+            reversedHalf = reversedHalf * 10 + digit; // Append digit to reversedHalf
+            x = x / 10; // Remove the last digit from x
+        }
+
+        // ✅ Check for palindrome:
+        // Case 1: Even number of digits → x == reversedHalf (e.g., 1221 → 12 == 12)
+        // Case 2: Odd number of digits → x == reversedHalf / 10 (e.g., 12321 → 12 == 123 / 10)
+        return x == reversedHalf || x == reversedHalf / 10;
+    }
+}
