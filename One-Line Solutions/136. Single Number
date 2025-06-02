@@ -1,0 +1,76 @@
+Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+You must implement a solution with a linear runtime complexity and use only constant extra space.
+
+ 
+
+Example 1:
+
+Input: nums = [2,2,1]
+
+Output: 1
+
+Example 2:
+
+Input: nums = [4,1,2,1,2]
+
+Output: 4
+
+Example 3:
+
+Input: nums = [1]
+
+Output: 1
+
+ 
+
+Constraints:
+
+1 <= nums.length <= 3 * 104
+-3 * 104 <= nums[i] <= 3 * 104
+Each element in the array appears twice except for one element which appears only once.
+
+
+Solution (In Words):
+
+✨ Intuition:
+XOR is like a toggle:
+First time you see a number → it adds it to the result
+Second time you see the same number → it removes it
+In the end, only the number that appeared once is left.
+
+For example lets look at case 2:
+
+Start with 0 and XOR with 4 (first term)
+0 ^ 4 = 4
+Take the result 4 and XOR with next term 1
+4 ^ 1 = 5
+Now take the result 5, and XOR with the 3rd term
+5 ^ 2 = 7
+Keep going
+7 ^ 1 = 6  // 1 appears twice, so it's being undone
+Keep going
+6 ^ 2 = 4  // 2 also undone, final result is 4
+
+4 is the only term from the OG array that remains, so that is the Single Number
+
+
+Coding Solution:
+
+class Solution {
+    public int singleNumber(int[] nums) {
+        int result = 0; // Start with 0 since x ^ 0 = x
+
+        // Go through every number in the array
+        for (int num : nums) {
+            result ^= num; // XOR current result with the number
+        }
+
+        // After all XOR operations, result holds the single number
+        return result;
+    }
+}
+
+
+
+
