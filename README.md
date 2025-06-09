@@ -116,14 +116,16 @@
 ### 🔢 Integer / int
 | Method | Description |
 |--------|-------------|
-| `Integer.parseInt(str)` | Converts string to int |
-| `Integer.parseInt(binary, 2)` | Converts Binary Number to an int |
+| `Integer.parseInt(str)` | Converts string to primitive int |
+| `Integer.parseInt(binaryStr, 2)` | Converts binary string (e.g. "101") to decimal int |
 | `Integer.toString(i)` | Converts int to string |
+| `Integer.toBinaryString(i)` | Converts int to binary string (e.g. 5 → "101") |
 | `Integer.valueOf(str)` | Converts string to Integer object |
 | `Integer.max(a, b)` | Returns larger of two ints |
 | `Integer.min(a, b)` | Returns smaller of two ints |
 | `Integer.compare(a, b)` | Compares two ints |
 | `Integer.bitCount(i)` | Number of 1s in binary form of i |
+
 
 ---
 
