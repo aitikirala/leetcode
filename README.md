@@ -61,6 +61,7 @@
 | `map.keySet()` | Returns set of all keys |
 | `map.values()` | Returns collection of values |
 | `map.entrySet()` | Returns set of key-value pairs |
+| `map.put(key, map.getOrDefault(key, 0) + 1)' | Returns current count or 0 if not present and increments by 1 |
 
 ---
 
