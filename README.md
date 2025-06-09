@@ -117,6 +117,7 @@
 | Method | Description |
 |--------|-------------|
 | `Integer.parseInt(str)` | Converts string to int |
+| `Integer.parseInt(binary, 2)` | Converts Binary Number to an int |
 | `Integer.toString(i)` | Converts int to string |
 | `Integer.valueOf(str)` | Converts string to Integer object |
 | `Integer.max(a, b)` | Returns larger of two ints |
