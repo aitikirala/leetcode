@@ -90,10 +90,61 @@
 | `s.equalsIgnoreCase(str)` | Case-insensitive comparison |
 | `s.contains(sub)` | Checks if substring exists |
 | `s.replace(a, b)` | Replaces all a's with b's |
-| `s.split(\" \\\")` | Splits string by space or regex |
+| `s.split(" ")` | Splits string by space or regex |
 | `s.trim()` | Removes leading and trailing whitespace |
 | `String.valueOf(x)` | Converts x to string |
 | `String.join(delimiter, list)` | Joins strings with delimiter |
+| `s.toCharArray()` | Converts string to char array |
+| `s.toLowerCase()` | Converts to lowercase |
+| `s.toUpperCase()` | Converts to uppercase |
+| `s.isEmpty()` | Checks if string is empty |
+
+---
+
+### 🧐 Character
+| Method | Description |
+|--------|-------------|
+| `Character.isLetter(c)` | Checks if char is a letter |
+| `Character.isDigit(c)` | Checks if char is a digit |
+| `Character.isLowerCase(c)` | Checks if char is lowercase |
+| `Character.isUpperCase(c)` | Checks if char is uppercase |
+| `Character.toLowerCase(c)` | Converts to lowercase |
+| `Character.toUpperCase(c)` | Converts to uppercase |
+
+---
+
+### 🔢 Integer / int
+| Method | Description |
+|--------|-------------|
+| `Integer.parseInt(str)` | Converts string to int |
+| `Integer.toString(i)` | Converts int to string |
+| `Integer.valueOf(str)` | Converts string to Integer object |
+| `Integer.max(a, b)` | Returns larger of two ints |
+| `Integer.min(a, b)` | Returns smaller of two ints |
+| `Integer.compare(a, b)` | Compares two ints |
+| `Integer.bitCount(i)` | Number of 1s in binary form of i |
+
+---
+
+### 🔢 Double / double
+| Method | Description |
+|--------|-------------|
+| `Double.parseDouble(str)` | Converts string to double |
+| `Double.toString(d)` | Converts double to string |
+| `Double.isNaN(d)` | Checks if value is NaN |
+| `Double.isInfinite(d)` | Checks if value is infinite |
+| `Double.compare(a, b)` | Compares two doubles |
+
+---
+
+### 🔘 Boolean / boolean
+| Method | Description |
+|--------|-------------|
+| `Boolean.parseBoolean(str)` | Converts string to boolean |
+| `Boolean.toString(b)` | Converts boolean to string |
+| `Boolean.logicalAnd(a, b)` | Logical AND |
+| `Boolean.logicalOr(a, b)` | Logical OR |
+| `Boolean.logicalXor(a, b)` | Logical XOR |
 
 ---
 
@@ -125,6 +176,22 @@
 | `pq.add(val)` | Adds to queue |
 | `pq.poll()` | Removes and returns smallest element |
 | `pq.peek()` | Returns smallest without removing |
-
 ---
+
+### 🔄 Type Conversion Methods
+
+| From → To | Method |
+|-----------|--------|
+| `int` → `String` | `Integer.toString(i)` or `String.valueOf(i)` |
+| `String` → `int` | `Integer.parseInt(s)` or `Integer.valueOf(s)` |
+| `double` → `String` | `Double.toString(d)` or `String.valueOf(d)` |
+| `String` → `double` | `Double.parseDouble(s)` |
+| `boolean` → `String` | `Boolean.toString(b)` or `String.valueOf(b)` |
+| `String` → `boolean` | `Boolean.parseBoolean(s)` |
+| `char` → `String` | `Character.toString(c)` or `String.valueOf(c)` |
+| `String` → `char` | `s.charAt(0)` (first character only) |
+| `int` → `char` | `(char) i` (casts ASCII value to character) |
+| `char` → `int` | `(int) c` (gets ASCII value) |
+| `double` → `int` | `(int) d` (explicit cast, truncates decimal) |
+| `int` → `double` | `double d = i;` (implicit widening conversion) |
 
