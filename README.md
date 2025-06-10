@@ -28,6 +28,8 @@
 | `Arrays.fill(arr, val)` | Fills array with val |
 | `Arrays.binarySearch(arr, key)` | Searches sorted array for key (returns index or -1) |
 | `Arrays.stream(arr)` | Turns array into Stream for further ops |
+| `Arrays.sort(arr` | Sorts an array |
+| `Arrays.copyOf(arr, arr.length` | Makes a copy of an array with desired length |
 
 ---
 
