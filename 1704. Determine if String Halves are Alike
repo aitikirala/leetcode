@@ -28,8 +28,9 @@ Solution:
 class Solution {
     public boolean halvesAreAlike(String s) {
         if(s.length() % 2 == 0){
-            int mid = s.length()/2;
-            String first = s.substring(0,mid), last = s.substring(mid, s.length());
+            String sLower = s.toLowerCase();
+            int mid = sLower.length()/2;
+            String first = sLower.substring(0,mid), last = sLower.substring(mid, sLower.length());
             int vowelFirst = 0, vowelLast = 0;
             
             for(int i=0; i < mid; i++){
