@@ -1,0 +1,93 @@
+Given an integer n, add a dot (".") as the thousands separator and return it in string format.
+
+ 
+
+Example 1:
+
+Input: n = 987
+Output: "987"
+Example 2:
+
+Input: n = 1234
+Output: "1.234"
+
+
+My Solution: 
+
+class Solution {
+    public String thousandSeparator(int n) {
+        StringBuilder sb = new StringBuilder();
+        String s = Integer.toString(n);
+        int count = 0;
+
+        if(s.length()<=3){
+            return s;
+        }
+        
+        if(s.length()% 3 == 0){
+            for(int i=0; i<s.length(); i++){
+                if(i != 0 && i%3==0){
+                    sb.append('.');
+                }
+                sb.append(s.charAt(i));
+            }
+
+        } else if (s.length()% 3 == 1){
+            sb.append(s.charAt(0));
+            sb.append('.');
+
+            for(int i=1; i<s.length(); i++){
+                if(count == 3 && i != s.length()-1){
+                    sb.append('.');
+                    count = 0;
+                }
+                sb.append(s.charAt(i));
+                count++;
+            }
+            
+        } else if (s.length()% 3 == 2){
+            sb.append(s.charAt(0));
+            sb.append(s.charAt(1));
+            sb.append('.');
+
+            for(int i=2; i<s.length(); i++){
+                if(count == 3 && i != s.length()-1){
+                    sb.append('.');
+                    count = 0;
+                }
+                sb.append(s.charAt(i));
+                count++;
+            }
+        }
+
+        return sb.toString();
+        
+
+        
+        
+
+    }
+}
+
+
+This solution works and is very efficient, but can be simplified to this. It does the same thing and takes the same amount of time but is way shorter.
+
+class Solution {
+    public String thousandSeparator(int n) {
+        StringBuilder sb = new StringBuilder();
+        String s = Integer.toString(n);
+        int count = 0;
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+            sb.append(s.charAt(i));
+            count++;
+            if (count % 3 == 0 && i != 0) {
+                sb.append('.');
+            }
+        }
+
+        return sb.reverse().toString();
+    }
+}
+
+
